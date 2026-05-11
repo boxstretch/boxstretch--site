@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ストレッチ専門店ボックストレッチ | 日野市豊田駅徒歩3分</title>
+    <meta name="description" content="東京都日野市豊田のストレッチ専門店ボックストレッチ。完全個室で丁寧な施術。豊田駅南口徒歩3分。平日22時まで営業。">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --blue-main: #1565C0;
+            --blue-dark: #0D47A1;
+            --blue-light: #1E88E5;
+            --blue-pale: #E3F2FD;
+            --blue-accent: #42A5F5;
+            --text-dark: #1a2a3a;
+            --text-gray: #546e7a;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif;
+            background-color: #f5f9ff;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+        .header-top {
+            background: linear-gradient(90deg, #0D47A1, #1565C0);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            font-size: 0.85em;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .header-top span, .header-top a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+        }
+        .hero-image {
+            position: relative;
+            height: 630px;
+            overflow: hidden;
+            background: #000;
+        }
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: 1;
+            display: block;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to right,
+                rgba(0,0,0,0.75) 0%,
+                rgba(0,0,0,0.45) 45%,
+                rgba(0,0,0,0.05) 100%
+            );
+            display: flex;
+            align-items: center;
+            padding: 60px;
+        }
+        .hero-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+        .hero-text { color: white; max-width: 540px; }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-size: 0.82em;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+        .hero-text h1 {
+            font-size: 3.2em;
+            line-height: 1.2;
+            margin-bottom: 18px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+        }
+        .hero-text h1 .accent { color: #90CAF9; }
+        .hero-text p {
+            font-size: 1.05em;
+            line-height: 2;
+            margin-bottom: 28px;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.8);
+        }
+        .hero-points { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; }
+        .hero-point {
+            background: rgba(255,255,255,0.18);
+            border: 1px solid rgba(255,255,255,0.35);
+            padding: 7px 18px;
+            border-radius: 25px;
+            font-size: 0.85em;
+        }
+        .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+        .btn-hero-primary {
+            background: white;
+            color: var(--blue-main);
+            padding: 15px 32px;
+            border-radius: 35px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1em;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+        }
+        .btn-hero-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 15px 32px;
+            border-radius: 35px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+        .btn-hero-primary:hover, .btn-hero-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .hero-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+        .stat-card {
+            background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 18px;
+            padding: 22px 20px;
+            text-align: center;
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+        .stat-num { font-size: 2em; font-weight: 900; line-height: 1; margin-bottom: 6px; }
+        .stat-num small { font-size: 0.45em; font-weight: 600; }
+        .stat-label { font-size: 0.78em; opacity: 0.85; }
+        nav {
+            background: var(--blue-dark);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 4px;
+            padding: 8px 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.3);
+        }
+        nav a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            padding: 7px 16px;
+            border-radius: 25px;
+            font-size: 0.85em;
+            transition: all 0.3s;
+        }
+        nav a:hover { background: var(--blue-light); color: white; }
+        section { max-width: 1000px; margin: 70px auto; padding: 0 24px; }
+        .section-title { text-align: center; margin-bottom: 45px; }
+        .section-title .label {
+            display: inline-block;
+            background: var(--blue-pale);
+            color: var(--blue-main);
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.78em;
+            margin-bottom: 12px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+        .section-title h2 {
+            color: var(--text-dark);
+            font-size: 1.9em;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--blue-main), var(--blue-accent));
+            border-radius: 2px;
+        }
+        .section-title p { color: var(--text-gray); margin-top: 18px; font-size: 0.95em; }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 25px rgba(21,101,192,0.1);
+            transition: all 0.3s;
+            position: relative;
+        }
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--blue-main), var(--blue-accent));
+            z-index: 1;
+        }
+        .feature-card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(21,101,192,0.2); }
+        .feature-card-photo {
+            width: 100%;
+            height: 160px;
+            overflow: hidden;
+            background: var(--blue-pale);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .feature-card-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+        .feature-card:hover .feature-card-photo img { transform: scale(1.07); }
+        .feature-card-photo-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%; height: 100%;
+            color: var(--blue-main);
+            opacity: 0.45;
+            text-align: center;
+            padding: 10px;
+        }
+        .feature-card-photo-placeholder .ph-icon { font-size: 3em; display: block; margin-bottom: 6px; }
+        .feature-card-photo-placeholder p { font-size: 0.65em; line-height: 1.5; }
+        .feature-card-body { padding: 18px 16px 22px; text-align: center; }
+        .feature-card-body h3 { color: var(--blue-main); margin-bottom: 8px; font-size: 1em; font-weight: 700; }
+        .feature-card-body p { font-size: 0.83em; color: var(--text-gray); line-height: 1.65; }
+        .staff-section {
+            background: linear-gradient(135deg, #0D47A1 0%, #1565C0 50%, #1E88E5 100%);
+            padding: 75px 24px;
+            color: white;
+        }
+        .staff-section .section-title h2 { color: white; }
+        .staff-section .section-title h2::after { background: rgba(255,255,255,0.5); }
+        .staff-section .section-title .label { background: rgba(255,255,255,0.2); color: white; }
+        .staff-section .section-title p { color: rgba(255,255,255,0.8); }
+        .staff-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 780px;
+            margin: 0 auto;
+            display: flex;
+            gap: 35px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .staff-photo {
+            width: 160px; height: 160px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.5);
+            flex-shrink: 0;
+            overflow: hidden;
+            background: rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .staff-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+        .staff-photo-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%; height: 100%;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 10px;
+        }
+        .staff-photo-placeholder .ph-icon { font-size: 3.5em; display: block; margin-bottom: 8px; }
+        .staff-photo-placeholder p { font-size: 0.7em; line-height: 1.5; opacity: 0.9; }
+        .staff-info { flex: 1; min-width: 220px; }
+        .staff-info h3 { font-size: 1.55em; margin-bottom: 5px; font-weight: 900; }
+        .staff-role { font-size: 0.88em; opacity: 0.75; margin-bottom: 16px; }
+        .staff-info p { font-size: 0.92em; line-height: 1.9; opacity: 0.95; }
+        .staff-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+        .staff-tag {
+            background: rgba(255,255,255,0.18);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.8em;
+        }
+        /* ★ Instagram ボタンのみ */
+        .instagram-section {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 24px;
+            text-align: center;
+        }
+        .instagram-section .section-title { margin-bottom: 30px; }
+        .instagram-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 30px;
+            box-shadow: 0 4px 25px rgba(21,101,192,0.1);
+            border: 1px solid #e8f0fe;
+        }
+        .instagram-card p {
+            color: var(--text-gray);
+            font-size: 0.95em;
+            margin-bottom: 28px;
+        }
+        .instagram-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
+            padding: 20px 48px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            box-shadow: 0 6px 25px rgba(220,39,67,0.4);
+            letter-spacing: 0.5px;
+        }
+        .instagram-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(220,39,67,0.5);
+        }
+        .instagram-btn .ig-icon { font-size: 1.4em; }
+        .instagram-account {
+            margin-top: 16px;
+            font-size: 0.88em;
+            color: var(--text-gray);
+        }
+        /* メニュー */
+        .menu-section-wrap { background: #fafcff; padding: 70px 0; }
+        .menu-section-inner { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+        .menu-category { margin-bottom: 40px; }
+        .menu-category-title {
+            background: linear-gradient(90deg, var(--blue-main), var(--blue-light));
+            color: white;
+            padding: 13px 24px;
+            border-radius: 12px;
+            font-size: 1em;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+        .menu-list { display: flex; flex-direction: column; gap: 12px; }
+        .menu-item {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 3px 18px rgba(21,101,192,0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            border: 1px solid #e8f0fe;
+        }
+        .menu-item:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(21,101,192,0.18); }
+        .menu-item-photo {
+            width: 150px; min-height: 150px;
+            flex-shrink: 0;
+            background: var(--blue-pale);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .menu-item-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .photo-placeholder {
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            width: 100%; height: 100%;
+            color: var(--blue-main); opacity: 0.5;
+            padding: 12px; text-align: center;
+        }
+        .photo-placeholder span { font-size: 2.4em; display: block; margin-bottom: 6px; }
+        .photo-placeholder p { font-size: 0.65em; line-height: 1.5; }
+        .menu-item-body {
+            flex: 1; padding: 18px 22px;
+            display: flex; flex-direction: column;
+            justify-content: space-between; gap: 8px;
+        }
+        .menu-item.no-photo .menu-item-body { padding: 18px 24px; }
+        .menu-item-top {
+            display: flex; justify-content: space-between;
+            align-items: flex-start; gap: 10px; flex-wrap: wrap;
+        }
+        .menu-item-name { font-size: 0.97em; font-weight: bold; color: var(--text-dark); line-height: 1.45; flex: 1; }
+        .menu-item-duration {
+            font-size: 0.8em; color: var(--blue-main);
+            background: var(--blue-pale); padding: 3px 11px;
+            border-radius: 15px; white-space: nowrap; font-weight: bold;
+        }
+        .menu-item-desc { font-size: 0.82em; color: var(--text-gray); line-height: 1.65; }
+        .menu-item-bottom {
+            display: flex; justify-content: space-between;
+            align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 4px;
+        }
+        .menu-item-price { font-size: 1.5em; font-weight: 900; color: var(--blue-main); line-height: 1; }
+        .menu-item-price span { font-size: 0.53em; font-weight: normal; color: var(--text-gray); }
+        .menu-item-badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 5px; }
+        .badge { padding: 3px 12px; border-radius: 15px; font-size: 0.73em; font-weight: bold; }
+        .badge-trial    { background: #fff3e0; color: #f57c00; border: 1px solid #ffe0b2; }
+        .badge-recommend{ background: var(--blue-pale); color: var(--blue-main); border: 1px solid #bbdefb; }
+        .badge-limited  { background: #fce4ec; color: #c62828; border: 1px solid #ffcdd2; }
+        .badge-repeater { background: #f3e5f5; color: #7b1fa2; border: 1px solid #e1bee7; }
+        .btn-book-small {
+            background: linear-gradient(135deg, var(--blue-main), var(--blue-light));
+            color: white; padding: 9px 20px; border-radius: 25px;
+            font-size: 0.83em; font-weight: bold; text-decoration: none;
+            transition: all 0.3s; white-space: nowrap;
+            box-shadow: 0 3px 12px rgba(21,101,192,0.3);
+        }
+        .btn-book-small:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(21,101,192,0.4); }
+        .menu-item-sm { border-radius: 11px !important; box-shadow: 0 2px 10px rgba(21,101,192,0.07) !important; border-color: #edf3fb !important; }
+        .menu-item-sm .menu-item-body { padding: 11px 18px !important; gap: 4px !important; }
+        .menu-item-sm .menu-item-name { font-size: 0.85em !important; font-weight: 600 !important; }
+        .menu-item-sm .menu-item-duration { font-size: 0.72em !important; padding: 2px 9px !important; }
+        .menu-item-sm .menu-item-desc { font-size: 0.75em !important; line-height: 1.5 !important; }
+        .menu-item-sm .menu-item-price { font-size: 1.15em !important; }
+        .menu-item-sm .btn-book-small { font-size: 0.75em !important; padding: 7px 14px !important; }
+        .flow-section { background: linear-gradient(180deg, var(--blue-pale) 0%, #f0f8ff 100%); padding: 75px 24px; }
+        .flow-image-wrap { max-width: 960px; margin: 0 auto; background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 40px rgba(21,101,192,0.15); }
+        .flow-image-wrap img { width: 100%; height: auto; display: block; }
+        .flow-steps-alt { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(6,1fr); background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 40px rgba(21,101,192,0.15); }
+        .flow-step { padding: 28px 16px; text-align: center; border-right: 1px solid var(--blue-pale); }
+        .flow-step:last-child { border-right: none; }
+        .flow-step-num { width: 36px; height: 36px; background: linear-gradient(135deg, var(--blue-main), var(--blue-light)); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85em; font-weight: bold; margin: 0 auto 12px; }
+        .flow-step .step-icon { font-size: 2em; margin-bottom: 8px; display: block; }
+        .flow-step h4 { font-size: 0.85em; color: var(--blue-main); margin-bottom: 6px; }
+        .flow-step p { font-size: 0.73em; color: var(--text-gray); line-height: 1.5; }
+        .flow-note { text-align: center; margin-top: 22px; font-size: 0.92em; color: var(--text-gray); }
+        .review-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 24px; }
+        .review-card { background: white; border-radius: 18px; padding: 28px; box-shadow: 0 4px 25px rgba(21,101,192,0.1); position: relative; overflow: hidden; transition: transform 0.3s; }
+        .review-card:hover { transform: translateY(-5px); }
+        .review-card::before { content: '"'; position: absolute; top: -5px; right: 18px; font-size: 7em; color: var(--blue-pale); font-family: Georgia,serif; line-height: 1; }
+        .review-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg,var(--blue-main),var(--blue-accent)); }
+        .review-stars { color: #f9a825; font-size: 1.1em; margin-bottom: 12px; letter-spacing: 2px; }
+        .review-text { font-size: 0.9em; line-height: 1.8; margin-bottom: 18px; position: relative; z-index: 1; }
+        .review-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.82em; color: var(--text-gray); border-top: 1px solid var(--blue-pale); padding-top: 12px; }
+        .review-source { background: var(--blue-pale); color: var(--blue-main); padding: 3px 12px; border-radius: 12px; }
+        .info-box { background: white; border-radius: 20px; padding: 8px 35px; box-shadow: 0 4px 25px rgba(21,101,192,0.1); border: 1px solid #e8f0fe; }
+        .info-row { display: flex; padding: 18px 0; border-bottom: 1px solid var(--blue-pale); align-items: flex-start; gap: 20px; }
+        .info-row:last-child { border-bottom: none; }
+        .info-label { font-weight: bold; color: var(--blue-main); min-width: 120px; font-size: 0.88em; padding-top: 2px; }
+        .info-value { font-size: 0.94em; line-height: 1.75; }
+        .hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .hours-item { background: linear-gradient(135deg,var(--blue-pale),#f0f8ff); padding: 14px 18px; border-radius: 12px; border: 1px solid #ddeeff; }
+        .hours-item .day { font-size: 0.83em; color: var(--blue-main); font-weight: bold; margin-bottom: 4px; }
+        .hours-item .time { font-size: 1.08em; color: var(--text-dark); font-weight: bold; }
+        .booking-section { background: linear-gradient(135deg,#0D47A1 0%,#1565C0 50%,#1E88E5 100%); padding: 75px 24px; text-align: center; }
+        .booking-section h2 { color: white; font-size: 2em; margin-bottom: 10px; }
+        .booking-section > p { color: rgba(255,255,255,0.85); margin-bottom: 45px; }
+        .btn-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 900px; margin: 0 auto; }
+        .btn-book { display: flex; flex-direction: column; align-items: center; padding: 22px 36px; border-radius: 18px; font-size: 1em; font-weight: bold; text-decoration: none; transition: all 0.3s; min-width: 180px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); }
+        .btn-book:hover { transform: translateY(-5px); box-shadow: 0 12px 35px rgba(0,0,0,0.35); }
+        .btn-book .btn-icon { font-size: 2.2em; margin-bottom: 8px; }
+        .btn-book small { font-size: 0.75em; opacity: 0.85; font-weight: normal; margin-top: 4px; }
+        .btn-phone { background: white; color: var(--blue-main); }
+        .btn-hotpepper { background: #e60039; color: white; }
+        .btn-line { background: #06c755; color: white; }
+        .map-container { border-radius: 18px; overflow: hidden; box-shadow: 0 5px 25px rgba(21,101,192,0.15); border: 1px solid #e8f0fe; }
+        .map-container iframe { width: 100%; height: 420px; border: none; display: block; }
+        .access-info { background: white; border-radius: 18px; padding: 28px 35px; margin-top: 22px; box-shadow: 0 4px 25px rgba(21,101,192,0.1); display: flex; gap: 30px; flex-wrap: wrap; align-items: center; border: 1px solid #e8f0fe; }
+        .access-item { display: flex; align-items: center; gap: 14px; font-size: 0.95em; }
+        .access-icon { font-size: 1.8em; }
+        footer { background: linear-gradient(135deg,#0D47A1,#1565C0); color: white; text-align: center; padding: 55px 24px; }
+        .footer-logo { font-size: 1.4em; font-weight: 900; margin-bottom: 20px; letter-spacing: 2px; }
+        footer p { margin: 8px 0; opacity: 0.85; font-size: 0.92em; }
+        footer a { color: #90CAF9; text-decoration: none; }
+        .footer-links { display: flex; justify-content: center; gap: 28px; margin: 25px 0; flex-wrap: wrap; }
+        .footer-links a { color: rgba(255,255,255,0.75); font-size: 0.9em; }
+        .copyright { margin-top: 25px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 0.82em; opacity: 0.5; }
+        @media (max-width: 768px) {
+            .hero-image { height: auto; min-height: 520px; }
+            .hero-overlay { padding: 30px 20px; align-items: flex-end; padding-bottom: 50px; }
+            .hero-content { flex-direction: column; }
+            .hero-stats { display: none; }
+            .hero-text h1 { font-size: 2.2em; }
+            .staff-card { flex-direction: column; align-items: center; text-align: center; }
+            .staff-tags { justify-content: center; }
+            .hours-grid { grid-template-columns: 1fr; }
+            .menu-item { flex-direction: column; }
+            .menu-item-photo { width: 100%; height: 180px; min-height: auto; }
+            .info-box { padding: 8px 20px; }
+            .info-label { min-width: 90px; font-size: 0.82em; }
+            .flow-steps-alt { grid-template-columns: repeat(3,1fr); }
+            .flow-step { border-right: none; border-bottom: 1px solid var(--blue-pale); }
+            nav a { padding: 6px 10px; font-size: 0.78em; }
+            .instagram-btn { font-size: 0.95em; padding: 16px 32px; }
+        }
+        @media (max-width: 480px) {
+            .hero-text h1 { font-size: 1.75em; }
+            .flow-steps-alt { grid-template-columns: repeat(2,1fr); }
+        }
+    </style>
+</head>
+<body>
+<div class="header-top">
+    <span>📍 東京都日野市豊田3-39-11 ヴィラ山田105号</span>
+    <a href="tel:07084958581">📞 070-8495-8581</a>
+</div>
+
+<div class="hero-image">
+    <img src="top-photo.jpg" alt="ストレッチ専門店ボックストレッチ">
+    <div class="hero-overlay">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">✨ STRETCH SPECIALTY STORE</div>
+                <h1>ボックス<br><span class="accent">ストレッチ</span></h1>
+                <p>体の疲れ・コリ・硬さを<br>プロが丁寧にほぐします。<br>完全個室で、あなただけの施術を。</p>
+                <div class="hero-points">
+                    <span class="hero-point">🚪 完全個室</span>
+                    <span class="hero-point">👤 マンツーマン</span>
+                    <span class="hero-point">⏰ 平日22時まで</span>
+                    <span class="hero-point">🚉 駅チカ3分</span>
+                </div>
+                <div class="hero-buttons">
+                    <a href="tel:07084958581" class="btn-hero-primary">📞 今すぐ予約</a>
+                    <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank" class="btn-hero-secondary">💻 ネット予約</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card"><div class="stat-num">100<small>種以上</small></div><div class="stat-label">施術手法</div></div>
+                <div class="stat-card"><div class="stat-num">3<small>分</small></div><div class="stat-label">豊田駅から徒歩</div></div>
+                <div class="stat-card"><div class="stat-num">22<small>時</small></div><div class="stat-label">平日営業時間</div></div>
+                <div class="stat-card"><div class="stat-num">★ 5</div><div class="stat-label">Google評価</div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav>
+    <a href="#features">特徴</a>
+    <a href="#staff">スタッフ</a>
+    <a href="#instagram">Instagram</a>
+    <a href="#menu">メニュー</a>
+    <a href="#flow">施術の流れ</a>
+    <a href="#reviews">口コミ</a>
+    <a href="#info">営業情報</a>
+    <a href="#booking">予約</a>
+    <a href="#access">アクセス</a>
+</nav>
+
+<section id="features">
+    <div class="section-title">
+        <div class="label">OUR FEATURES</div>
+        <h2>ボックストレッチの特徴</h2>
+        <p>お客様に喜んでいただけるサービスをご提供しています</p>
+    </div>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="feature-card-photo">
+                <img src="feature1.jpg" alt="完全個室" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="feature-card-photo-placeholder" style="display:none;"><span class="ph-icon">🚪</span><p>feature1.jpg</p></div>
+            </div>
+            <div class="feature-card-body"><h3>完全個室</h3><p>プライベート空間で周りを気にせずリラックスして施術を受けられます</p></div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-card-photo">
+                <img src="feature2.jpg" alt="オーダーメイド" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="feature-card-photo-placeholder" style="display:none;"><span class="ph-icon">🎯</span><p>feature2.jpg</p></div>
+            </div>
+            <div class="feature-card-body"><h3>オーダーメイド</h3><p>お客様のお悩みや体の状態に合わせて最適な施術をご提案します</p></div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-card-photo">
+                <img src="feature3.jpg" alt="100種類以上" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="feature-card-photo-placeholder" style="display:none;"><span class="ph-icon">🦵</span><p>feature3.jpg</p></div>
+            </div>
+            <div class="feature-card-body"><h3>100種類以上</h3><p>豊富な手法の中から最適な組み合わせでストレッチを提供します</p></div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-card-photo">
+                <img src="feature4.jpg" alt="ウェア無料貸出" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="feature-card-photo-placeholder" style="display:none;"><span class="ph-icon">👕</span><p>feature4.jpg</p></div>
+            </div>
+            <div class="feature-card-body"><h3>ウェア無料貸出</h3><p>ストレッチに適したジャージを無料でお貸し出しします</p></div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-card-photo">
+                <img src="feature5.jpg" alt="平日22時まで" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="feature-card-photo-placeholder" style="display:none;"><span class="ph-icon">⏰</span><p>feature5.jpg</p></div>
+            </div>
+            <div class="feature-card-body"><h3>平日22時まで</h3><p>仕事が遅くなっても安心。平日は夜22時まで営業しています</p></div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-card-photo">
+                <img src="feature6.jpg" alt="駅近3分" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="feature-card-photo-placeholder" style="display:none;"><span class="ph-icon">🚉</span><p>feature6.jpg</p></div>
+            </div>
+            <div class="feature-card-body"><h3>駅近3分</h3><p>豊田駅南口から徒歩わずか3分。通いやすい立地です</p></div>
+        </div>
+    </div>
+</section>
+
+<div class="staff-section" id="staff">
+    <div class="section-title">
+        <div class="label" style="background:rgba(255,255,255,0.2);color:white;">STAFF</div>
+        <h2>スタッフ紹介</h2>
+        <p>お客様の体を責任もってケアします</p>
+    </div>
+    <div class="staff-card">
+        <div class="staff-photo">
+            <img src="staff-photo.jpg" alt="オーナー兼トレーナー"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="staff-photo-placeholder" style="display:none;">
+                <span class="ph-icon">👤</span>
+                <p>staff-photo.jpg<br>を追加してください</p>
+            </div>
+        </div>
+        <div class="staff-info">
+            <h3>オーナー兼トレーナー</h3>
+            <p class="staff-role">ストレッチ専門店ボックストレッチ 代表</p>
+            <p>お客様お一人おひとりの体の状態やお悩みをしっかりヒアリングし、100種類以上の手法の中から最適なストレッチをご提供します。<br><br>「施術後に体が楽になった」「また来たい」と思っていただけるよう、丁寧な施術と親切なカウンセリングを心がけています。</p>
+            <div class="staff-tags">
+                <span class="staff-tag">🎓 ストレッチ専門</span>
+                <span class="staff-tag">💪 筋膜リリース</span>
+                <span class="staff-tag">💆 全身ケア</span>
+                <span class="staff-tag">🗣️ 丁寧なカウンセリング</span>
+            </div>
+        </div>
+    </div>
+    <p style="text-align:center;margin-top:22px;opacity:0.8;font-size:0.9em;">
+        ※ スタッフ詳細は <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/staff/W000852435/)" target="_blank" style="color:#90CAF9;">ホットペッパービューティー</a> でもご確認いただけます
+    </p>
+</div>
+
+<!-- ★ Instagram ボタンのみ（確実に表示）-->
+<div class="instagram-section" id="instagram">
+    <div class="section-title">
+        <div class="label">INSTAGRAM</div>
+        <h2>Instagram</h2>
+        <p>最新の投稿はこちらからご覧いただけます</p>
+    </div>
+    <div class="instagram-card">
+        <p>ボックストレッチの最新情報・施術の様子・お客様の声などをInstagramで発信中！<br>ぜひフォローしてください📷</p>
+        <a href="[instagram.com](https://www.instagram.com/boxstretch12/)" target="_blank" class="instagram-btn">
+            <span class="ig-icon">📷</span>
+            Instagramで最新投稿を見る
+        </a>
+        <p class="instagram-account">@boxstretch12</p>
+    </div>
+</div>
+
+<div class="menu-section-wrap" id="menu">
+    <div class="menu-section-inner">
+        <div class="section-title">
+            <div class="label">MENU &amp; PRICE</div>
+            <h2>メニュー・料金</h2>
+            <p>あなたのライフスタイルに合わせてお選びください</p>
+        </div>
+        <div class="menu-category">
+            <div class="menu-category-title">💆 ストレッチメニュー</div>
+            <div class="menu-list">
+                <div class="menu-item">
+                    <div class="menu-item-photo">
+                        <img src="menu1.jpg" alt="初回限定" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="display:none;"><span>📷</span><p>menu1.jpg</p></div>
+                    </div>
+                    <div class="menu-item-body">
+                        <div>
+                            <div class="menu-item-top">
+                                <div class="menu-item-name">🎁 【3周年記念】初回限定オーダーメイドストレッチ</div>
+                                <div class="menu-item-duration">⏱ 60分</div>
+                            </div>
+                            <p class="menu-item-desc">しっかりヒアリングを行い、筋膜リリースで緩んだところから全身ストレッチでスッキリ☆</p>
+                        </div>
+                        <div class="menu-item-bottom">
+                            <div>
+                                <div class="menu-item-badges">
+                                    <span class="badge badge-trial">初回限定</span>
+                                    <span class="badge badge-limited">期間限定</span>
+                                </div>
+                                <div class="menu-item-price">¥3,980<span>（税込）</span></div>
+                            </div>
+                            <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank" class="btn-book-small">空席確認・予約する</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-photo">
+                        <img src="menu2.jpg" alt="当店おススメ" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="display:none;"><span>📷</span><p>menu2.jpg</p></div>
+                    </div>
+                    <div class="menu-item-body">
+                        <div>
+                            <div class="menu-item-top">
+                                <div class="menu-item-name">⭐ 【3周年記念】初回限定☆当店おススメ全身ストレッチ</div>
+                                <div class="menu-item-duration">⏱ 90分</div>
+                            </div>
+                            <p class="menu-item-desc">一番おススメ！全身のストレッチを行ったうえで、気になる箇所を重点的にアプローチし慢性的なお悩み改善サポート。</p>
+                        </div>
+                        <div class="menu-item-bottom">
+                            <div>
+                                <div class="menu-item-badges">
+                                    <span class="badge badge-recommend">当店おススメ</span>
+                                    <span class="badge badge-trial">初回限定</span>
+                                </div>
+                                <div class="menu-item-price">¥4,980<span>（税込）</span></div>
+                            </div>
+                            <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank" class="btn-book-small">空席確認・予約する</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-photo">
+                        <img src="menu3.jpg" alt="首肩コリ" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="display:none;"><span>📷</span><p>menu3.jpg</p></div>
+                    </div>
+                    <div class="menu-item-body">
+                        <div>
+                            <div class="menu-item-top">
+                                <div class="menu-item-name">✨ 首・肩コリ【根本から改善ストレッチ】極上の肩甲骨はがしも◎</div>
+                                <div class="menu-item-duration">⏱ 90分</div>
+                            </div>
+                            <p class="menu-item-desc">【初回限定】固まっている肩回りを肩甲骨はがしでスッキリ♪全身のバランスを整え肩周りのお悩みを根本から改善！</p>
+                        </div>
+                        <div class="menu-item-bottom">
+                            <div>
+                                <div class="menu-item-badges"><span class="badge badge-trial">初回限定</span></div>
+                                <div class="menu-item-price">¥4,980<span>（税込）</span></div>
+                            </div>
+                            <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank" class="btn-book-small">空席確認・予約する</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-photo">
+                        <img src="menu4.jpg" alt="腰痛改善" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="display:none;"><span>📷</span><p>menu4.jpg</p></div>
+                    </div>
+                    <div class="menu-item-body">
+                        <div>
+                            <div class="menu-item-top">
+                                <div class="menu-item-name">💪 腰痛のお悩み【根本から改善ストレッチ】デスクワーク/骨盤/慢性腰痛に◎</div>
+                                <div class="menu-item-duration">⏱ 90分</div>
+                            </div>
+                            <p class="menu-item-desc">【初回限定】慢性的な腰の辛さをストレッチで根本改善。一時的ではなくずっとラクな体を手に入れましょう。</p>
+                        </div>
+                        <div class="menu-item-bottom">
+                            <div>
+                                <div class="menu-item-badges"><span class="badge badge-trial">初回限定</span></div>
+                                <div class="menu-item-price">¥4,980<span>（税込）</span></div>
+                            </div>
+                            <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank" class="btn-book-small">空席確認・予約する</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-photo">
+                        <img src="menu5.jpg" alt="じっくり120分" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="display:none;"><span>📷</span><p>menu5.jpg</p></div>
+                    </div>
+                    <div class="menu-item-body">
+                        <div>
+                            <div class="menu-item-top">
+                                <div class="menu-item-name">🌟 初回限定全身ストレッチ "じっくりと"</div>
+                                <div class="menu-item-duration">⏱ 120分</div>
+                            </div>
+                            <p class="menu-item-desc">「長い時間じっくりと筋肉を伸ばしたい」「長年の体の悩みを改善したい！」無理なくゆっくりと伸ばしていきます。</p>
+                        </div>
+                        <div class="menu-item-bottom">
+                            <div>
+                                <div class="menu-item-badges"><span class="badge badge-trial">初回限定</span></div>
+                                <div class="menu-item-price">¥7,640<span>（税込）</span></div>
+                            </div>
+                            <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank" class="btn-book-small">空席確認・予約する</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item no-photo">
+                    <div class="menu-item-body">
+                        <div>
+                            <div class="menu-item-top">
+                                <div class="menu-item-name">🎉 【3周年記念】リピーター様限定◎ストレッチコース40分</div>
+                                <div class="menu-item-duration">⏱ 50分</div>
+                            </div>
+                            <p class="menu-item-desc">3周年を記念したリピーター様だけの特別価格。短時間でも体スッキリ！</p>
+                        </div>
+                        <div class="menu-item-bottom">
+                            <div>
+                                <div class="menu-item-badges">
+                                    <span class="badge badge-repeater">リピーター限定</span>
+                                    <span class="badge badge-limited">期間限定</span>
+                                </div>
+                                <div class="menu-item-price">¥4,930<span>（税込）</span></div>
+                            </div>
+                            <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank" class="btn-book-small">空席確認・予約する</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item no-photo">
+                    <div class="menu-item-body">
+                        <div>
+                            <div class="menu-item-top">
+                                <div class="menu-item-name">🎉 【3周年記念】リピーター様限定◎ストレッチコース60分</div>
+                                <div class="menu-item-duration">⏱ 70分</div>
+                            </div>
+                            <p class="menu-item-desc">3周年を記念したリピーター様だけの特別価格。全身をしっかりほぐします。</p>
+                        </div>
+                        <div class="menu-item-bottom">
+                            <div>
+                                <div class="menu-item-badges">
+                                    <span class="badge badge-repeater">リピーター限定</span>
+                                    <span class="badge badge-limited">期間限定</span>
+                                </div>
+                                <div class="menu-item-price">¥7,480<span>（税込）</span></div>
+                            </div>
+                            <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank" class="btn-book-small">空席確認・予約する</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item no-photo">
+                    <div class="menu-item-body">
+                        <div>
+                            <div class="menu-item-top">
+                                <div class="menu-item-name">🎉 【3周年記念】リピーター様限定◎ストレッチコース90分</div>
+                                <div class="menu-item-duration">⏱ 100分</div>
+                            </div>
+                            <p class="menu-item-desc">3周年を記念したリピーター様だけの特別価格。ゆったりたっぷり全身ケア。</p>
+                        </div>
+                        <div class="menu-item-bottom">
+                            <div>
+                                <div class="menu-item-badges">
+                                    <span class="badge badge-repeater">リピーター限定</span>
+                                    <span class="badge badge-limited">期間限定</span>
+                                </div>
+                                <div class="menu-item-price">¥9,800<span>（税込）</span></div>
+                            </div>
+                            <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank" class="btn-book-small">空席確認・予約する</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item no-photo menu-item-sm">
+                    <div class="menu-item-body">
+                        <div>
+                            <div class="menu-item-top">
+                                <div class="menu-item-name">オーダーメイド全身ストレッチ</div>
+                                <div class="menu-item-duration">⏱ 60分</div>
+                            </div>
+                            <p class="menu-item-desc">しっかりヒアリングを行い、筋膜リリースで緩んだところから全身ストレッチでスッキリ☆</p>
+                        </div>
+                        <div class="menu-item-bottom">
+                            <div class="menu-item-price">¥8,800<span>（税込）</span></div>
+                            <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank" class="btn-book-small">空席確認・予約する</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item no-photo menu-item-sm">
+                    <div class="menu-item-body">
+                        <div>
+                            <div class="menu-item-top">
+                                <div class="menu-item-name">☆当店おススメ☆ 全身オーダーメイドストレッチ</div>
+                                <div class="menu-item-duration">⏱ 90分</div>
+                            </div>
+                            <p class="menu-item-desc">全身のストレッチを行ったうえで、気になる箇所を重点的にアプローチし慢性的なお悩み改善サポート。</p>
+                        </div>
+                        <div class="menu-item-bottom">
+                            <div>
+                                <div class="menu-item-badges"><span class="badge badge-recommend">当店おススメ</span></div>
+                                <div class="menu-item-price">¥11,550<span>（税込）</span></div>
+                            </div>
+                            <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank" class="btn-book-small">空席確認・予約する</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item no-photo menu-item-sm">
+                    <div class="menu-item-body">
+                        <div>
+                            <div class="menu-item-top">
+                                <div class="menu-item-name">ストレッチコース</div>
+                                <div class="menu-item-duration">⏱ 120分</div>
+                            </div>
+                            <p class="menu-item-desc">頑張っている自分にご褒美！心地よくゆっくりと全身の筋肉を伸ばしていきます。</p>
+                        </div>
+                        <div class="menu-item-bottom">
+                            <div class="menu-item-price">¥15,280<span>（税込）</span></div>
+                            <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank" class="btn-book-small">空席確認・予約する</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-category">
+            <div class="menu-category-title" style="background:linear-gradient(90deg,#6a1b9a,#ab47bc);">💎 フェイス＆ヘッドストレッチ</div>
+            <div class="menu-list">
+                <div class="menu-item no-photo menu-item-sm">
+                    <div class="menu-item-body">
+                        <div class="menu-item-top"><div class="menu-item-name">40分 回数券ご利用</div></div>
+                        <div class="menu-item-bottom">
+                            <span style="font-size:0.9em;color:var(--text-gray);">回数券でのご予約</span>
+                            <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank" class="btn-book-small">空席確認・予約する</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item no-photo menu-item-sm">
+                    <div class="menu-item-body">
+                        <div class="menu-item-top"><div class="menu-item-name">60分 回数券ご利用</div></div>
+                        <div class="menu-item-bottom">
+                            <span style="font-size:0.9em;color:var(--text-gray);">回数券でのご予約</span>
+                            <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank" class="btn-book-small">空席確認・予約する</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item no-photo menu-item-sm">
+                    <div class="menu-item-body">
+                        <div class="menu-item-top"><div class="menu-item-name">90分 回数券ご利用</div></div>
+                        <div class="menu-item-bottom">
+                            <span style="font-size:0.9em;color:var(--text-gray);">回数券でのご予約</span>
+                            <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank" class="btn-book-small">空席確認・予約する</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item no-photo menu-item-sm">
+                    <div class="menu-item-body">
+                        <div>
+                            <div class="menu-item-top">
+                                <div class="menu-item-name">【リピーター様限定】初回お試しフェイス＆ヘッドストレッチ</div>
+                                <div class="menu-item-duration">⏱ 20分</div>
+                            </div>
+                            <p class="menu-item-desc">眼精疲労や頭痛・頸の痛みがある方に☆小顔効果も◎じっくり凝りを揉みほぐし頭スッキリ♪</p>
+                        </div>
+                        <div class="menu-item-bottom">
+                            <div>
+                                <div class="menu-item-badges"><span class="badge badge-limited">リピーター限定</span></div>
+                                <div class="menu-item-price">¥1,090<span>（税込）</span></div>
+                            </div>
+                            <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank" class="btn-book-small">空席確認・予約する</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item no-photo menu-item-sm">
+                    <div class="menu-item-body">
+                        <div>
+                            <div class="menu-item-top">
+                                <div class="menu-item-name">【リピーター様限定】フェイス＆ヘッドストレッチ</div>
+                                <div class="menu-item-duration">⏱ 20分</div>
+                            </div>
+                            <p class="menu-item-desc">眼精疲労や頭痛・頸の痛みがある方に☆小顔効果も◎じっくり凝りを揉みほぐし頭スッキリ♪</p>
+                        </div>
+                        <div class="menu-item-bottom">
+                            <div>
+                                <div class="menu-item-badges"><span class="badge badge-limited">リピーター限定</span></div>
+                                <div class="menu-item-price">¥3,300<span>（税込）</span></div>
+                            </div>
+                            <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank" class="btn-book-small">空席確認・予約する</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-category">
+            <div class="menu-category-title" style="background:linear-gradient(90deg,#00695c,#26a69a);">🗣️ カウンセリング</div>
+            <div class="menu-list">
+                <div class="menu-item no-photo menu-item-sm">
+                    <div class="menu-item-body">
+                        <div>
+                            <div class="menu-item-top"><div class="menu-item-name">カウンセリング（無料）</div></div>
+                            <p class="menu-item-desc">お身体のお悩みや、ストレッチはどんな感じでやるのか？などご相談だけでも大丈夫です！お気軽にご相談ください。</p>
+                        </div>
+                        <div class="menu-item-bottom">
+                            <div class="menu-item-price" style="color:#00695c;font-size:1.2em;">無料</div>
+                            <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank" class="btn-book-small" style="background:linear-gradient(135deg,#00695c,#26a69a);">空席確認・予約する</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p style="margin-top:20px;color:var(--text-gray);font-size:0.88em;text-align:center;">
+            ※ 最新のクーポン・キャンペーン情報は
+            <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank" style="color:var(--blue-main);">ホットペッパービューティー</a>
+            をご確認ください
+        </p>
+    </div>
+</div>
+<div class="flow-section" id="flow">
+    <div class="section-title">
+        <div class="label">HOW IT WORKS</div>
+        <h2>施術の流れ</h2>
+        <p>初めての方もご安心ください。6ステップで丁寧にご対応します</p>
+    </div>
+    <div class="flow-image-wrap">
+        <img src="flow-steps.jpg" alt="施術の流れ"
+             onerror="this.parentElement.style.display='none';document.getElementById('flow-alt').style.display='grid';">
+    </div>
+    <div class="flow-steps-alt" id="flow-alt" style="display:none;">
+        <div class="flow-step"><div class="flow-step-num">1</div><span class="step-icon">📋</span><h4>カウンセリング</h4><p>体の状態・お悩みをヒアリング</p></div>
+        <div class="flow-step"><div class="flow-step-num">2</div><span class="step-icon">👕</span><h4>お着替え</h4><p>ジャージを無料でお貸し出し</p></div>
+        <div class="flow-step"><div class="flow-step-num">3</div><span class="step-icon">🔍</span><h4>ボディチェック</h4><p>体の状態・柔軟性を確認</p></div>
+        <div class="flow-step"><div class="flow-step-num">4</div><span class="step-icon">💪</span><h4>筋膜リリース</h4><p>固まった筋膜をほぐします</p></div>
+        <div class="flow-step"><div class="flow-step-num">5</div><span class="step-icon">🦵</span><h4>ストレッチ</h4><p>100種類の手法でケア</p></div>
+        <div class="flow-step"><div class="flow-step-num">6</div><span class="step-icon">✅</span><h4>アフターケア</h4><p>効果確認とセルフケアアドバイス</p></div>
+    </div>
+    <p class="flow-note">💡 ジャージは<strong>無料でお貸し出し</strong>します。手ぶらでお越しください。</p>
+</div>
+
+<section id="reviews">
+    <div class="section-title">
+        <div class="label">REVIEWS</div>
+        <h2>お客様の声</h2>
+        <p>実際にご来店いただいたお客様のご感想</p>
+    </div>
+    <div class="review-grid">
+        <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">先生がとても親切で、体の悩みをしっかり聞いてくれました。施術後は体がとても軽くなり、肩や腰のこりがスッキリしました。完全個室なのでリラックスして受けられます。また来ます！</p>
+            <div class="review-meta"><span>30代女性</span><span class="review-source">🔍 Google</span></div>
+        </div>
+        <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">豊田駅からすぐで通いやすいです。施術は丁寧で、終わった後の体の軽さが全然違います。仕事帰りに22時まで営業しているのが本当に助かっています。</p>
+            <div class="review-meta"><span>40代男性</span><span class="review-source">🔍 Google</span></div>
+        </div>
+        <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">初めてストレッチ専門店に行きましたが、マッサージとは全然違う気持ちよさでした。筋膜リリースも組み合わせてもらい、長年の腰痛が楽になりました。</p>
+            <div class="review-meta"><span>50代女性</span><span class="review-source">🔍 Google</span></div>
+        </div>
+        <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">体が硬くてずっとコンプレックスでしたが、通い始めて2ヶ月で前屈が床に届くようになりました！先生のアドバイスも的確でセルフケアの方法も教えてくれます。</p>
+            <div class="review-meta"><span>20代女性</span><span class="review-source">🔍 Google</span></div>
+        </div>
+        <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">スポーツをしているので体のメンテナンスに通っています。100種類以上の手法があるとのことで、毎回体の状態に合わせて施術してもらえるのが嬉しいです。</p>
+            <div class="review-meta"><span>30代男性</span><span class="review-source">🔍 Google</span></div>
+        </div>
+        <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">ウェアの貸し出しがあるので仕事帰りにそのまま行けます。個室でプライベートな空間なので、気兼ねなくリラックスできました。定期的に通いたいと思います。</p>
+            <div class="review-meta"><span>40代女性</span><span class="review-source">🔍 Google</span></div>
+        </div>
+    </div>
+    <p style="text-align:center;margin-top:28px;font-size:0.88em;color:var(--text-gray);">
+        ※ 最新の口コミは <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank" style="color:var(--blue-main);">ホットペッパービューティー</a> および Google マップでもご確認いただけます
+    </p>
+</section>
+
+<section id="info">
+    <div class="section-title">
+        <div class="label">SHOP INFO</div>
+        <h2>営業情報</h2>
+    </div>
+    <div class="info-box">
+        <div class="info-row">
+            <span class="info-label">⏰ 営業時間</span>
+            <div class="info-value">
+                <div class="hours-grid">
+                    <div class="hours-item"><div class="day">月曜〜金曜</div><div class="time">10:00 〜 22:00</div></div>
+                    <div class="hours-item"><div class="day">土・日・祝日</div><div class="time">10:00 〜 21:00</div></div>
+                </div>
+            </div>
+        </div>
+        <div class="info-row">
+            <span class="info-label">📅 定休日</span>
+            <span class="info-value">不定休（事前にお問い合わせください）</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">📞 電話番号</span>
+            <span class="info-value"><a href="tel:07084958581" style="color:var(--blue-main);font-size:1.2em;font-weight:bold;">070-8495-8581</a></span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">📍 住所</span>
+            <span class="info-value">東京都日野市豊田3-39-11<br>ヴィラ山田105号</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">🚉 アクセス</span>
+            <span class="info-value">JR中央線 豊田駅 南口より <strong>徒歩3分</strong></span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">💳 予約方法</span>
+            <span class="info-value">電話 ／ ホットペッパービューティー ／ LINE ／ HP</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">👕 持ち物</span>
+            <span class="info-value">手ぶらOK（ジャージ無料貸出あり）</span>
+        </div>
+    </div>
+</section>
+
+<div class="booking-section" id="booking">
+    <h2>📅 ご予約はこちら</h2>
+    <p>お気軽にご連絡ください。初回の方も大歓迎です。</p>
+    <div class="btn-grid">
+        <a href="tel:07084958581" class="btn-book btn-phone">
+            <span class="btn-icon">📞</span>電話で予約<small>070-8495-8581</small>
+        </a>
+        <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank" class="btn-book btn-hotpepper">
+            <span class="btn-icon">💻</span>ホットペッパービューティー<small>24時間ネット予約</small>
+        </a>
+        <a href="#" class="btn-book btn-line">
+            <span class="btn-icon">💬</span>LINEで予約<small>友だち追加して予約</small>
+        </a>
+    </div>
+</div>
+
+<section id="access">
+    <div class="section-title">
+        <div class="label">ACCESS</div>
+        <h2>アクセス・地図</h2>
+    </div>
+    <div class="map-container">
+        <iframe src="[google.com](https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.8!2d139.3814!3d35.6608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018efb6f63a4a5f%3A0x1c6b5d3a8c1e2f0!2z44K544OI44Os44OD44OB44K344E15qW944Kk44Oc44OD44Kv44K544OI44Os44OB44OB!5e0!3m2!1sja!2sjp!4v1234567890)"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    <div class="access-info">
+        <div class="access-item">
+            <span class="access-icon">🚉</span>
+            <div><strong>JR中央線 豊田駅 南口</strong><br><span style="font-size:0.88em;color:var(--text-gray);">徒歩3分</span></div>
+        </div>
+        <div class="access-item">
+            <span class="access-icon">📍</span>
+            <div><strong>東京都日野市豊田3-39-11</strong><br><span style="font-size:0.88em;color:var(--text-gray);">ヴィラ山田105号</span></div>
+        </div>
+        <div class="access-item">
+            <span class="access-icon">🔍</span>
+            <a href="[maps.app.goo.gl](https://maps.app.goo.gl/qiwtH1hTvkwNSyGm8?g_st=ig)" target="_blank" style="color:var(--blue-main);font-weight:bold;">Googleマップで開く →</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-logo">🏃 ストレッチ専門店 ボックストレッチ</div>
+    <p>📍 東京都日野市豊田3-39-11 ヴィラ山田105号</p>
+    <p>📞 <a href="tel:07084958581">070-8495-8581</a></p>
+    <p>⏰ 月〜金 10:00〜22:00 ／ 土日祝 10:00〜21:00（不定休）</p>
+    <p>🚉 JR中央線 豊田駅南口 徒歩3分</p>
+    <div class="footer-links">
+        <a href="[beauty.hotpepper.jp](https://beauty.hotpepper.jp/kr/slnH000626696/coupon/)" target="_blank">ホットペッパービューティー</a>
+        <a href="tel:07084958581">電話で予約</a>
+        <a href="#">LINEで予約</a>
+        <a href="[instagram.com](https://www.instagram.com/boxstretch12/)" target="_blank">Instagram</a>
+    </div>
+    <div class="copyright">© 2025 ストレッチ専門店ボックストレッチ All Rights Reserved.</div>
+</footer>
+
+</body>
+</html>
